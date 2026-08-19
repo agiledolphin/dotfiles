@@ -1,0 +1,318 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# ──────────────────────────────────────────────────────────────
+# Starship 配置 · Catppuccin Powerline 风格
+#   → 放到 ~/.config/starship.toml
+#   → 必须安装 Nerd Font，否则色块箭头与图标会变成方块
+#   → 换主题：把下面的 palette 改成 tokyonight_storm / tokyonight_moon / tokyonight_day
+# ──────────────────────────────────────────────────────────────
+
+# 将所有命令的超时时间扩大到 2000 毫秒（2秒）
+command_timeout = 2000
+
+palette = 'tokyonight_night'
+
+# 提示符整体布局：powerline 色块单行，箭头处的 fg/bg 必须与相邻段对齐
+format = """
+[](red)\
+$os\
+$username\
+$hostname\
+[](bg:peach fg:red)\
+$directory\
+[](bg:yellow fg:peach)\
+$git_branch\
+$git_status\
+$git_state\
+[](fg:yellow bg:green)\
+$c\
+$rust\
+$zig\
+$golang\
+$nodejs\
+$bun\
+$python\
+$java\
+$package\
+[](fg:green bg:sapphire)\
+$docker_context\
+[](fg:sapphire bg:lavender)\
+$time\
+[ ](fg:lavender)\
+$cmd_duration\
+$line_break\
+$character"""
+
+# ── 操作系统（红色段）──
+[os]
+disabled = false
+style = "bg:red fg:crust"
+
+[os.symbols]
+Windows = ""
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+# ── 用户名（红色段，始终显示）──
+[username]
+show_always = true
+style_user = "bg:red fg:crust"
+style_root = "bg:red fg:crust"
+format = '[ $user]($style)'
+
+# ── 主机名（红色段，仅 SSH 会话显示 @host）──
+[hostname]
+ssh_only = true
+style = "bg:red fg:crust"
+format = '[@$hostname]($style)'
+
+# ── 当前目录（桃色段）──
+[directory]
+style = "bg:peach fg:crust"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+# ── Git（黄色段）──
+[git_branch]
+symbol = ""
+style = "bg:yellow"
+format = '[[ $symbol $branch ](fg:crust bg:yellow)]($style)'
+
+[git_status]
+style = "bg:yellow"
+format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
+conflicted = "=${count}"
+ahead      = "⇡${count}"
+behind     = "⇣${count}"
+diverged   = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked  = "?${count}"
+stashed    = "*${count}"
+modified   = "!${count}"
+staged     = "+${count}"
+renamed    = "»${count}"
+deleted    = "✘${count}"
+
+[git_state]
+style = "bg:yellow"
+format = '[[ \($state( $progress_current/$progress_total)\) ](fg:crust bg:yellow)]($style)'
+
+# ── 语言 / 运行时（绿色段，仅相关项目目录显示）──
+[c]
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol( $version(-$name)) ](fg:crust bg:green)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[zig]
+symbol = "↯"
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[bun]
+symbol = "bun"
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[python]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version)(\($virtualenv\)) ](fg:crust bg:green)]($style)'
+
+[java]
+symbol = " "
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+# 包版本：默认关闭，需要时把 disabled 改成 false
+[package]
+symbol = "󰏗 "
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+disabled = true
+
+# ── Docker（天蓝段）──
+[docker_context]
+symbol = ""
+style = "bg:sapphire"
+format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
+
+# ── 时间（薰衣草段）──
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:lavender"
+format = '[[  $time ](fg:crust bg:lavender)]($style)'
+
+# ── 命令耗时（提示符尾部，超过 2 秒才显示）──
+[cmd_duration]
+disabled = false
+min_time = 2000
+show_milliseconds = false
+show_notifications = false
+style = "fg:lavender"
+format = '[  $duration]($style)'
+
+# 单行提示符（catppuccin-powerline 默认风格）。
+# 想改成「信息一行 + 输入一行」的两行提示符，把下面改成 disabled = false
+[line_break]
+disabled = true
+
+# ── 提示符号 ──
+[character]
+disabled = false
+success_symbol = '[❯](bold fg:green)'
+error_symbol = '[❯](bold fg:red)'
+vimcmd_symbol = '[❮](bold fg:green)'
+vimcmd_replace_one_symbol = '[❮](bold fg:lavender)'
+vimcmd_replace_symbol = '[❮](bold fg:lavender)'
+vimcmd_visual_symbol = '[❮](bold fg:yellow)'
+
+# ── TokyoNight 调色板（完整命名版，四套）──
+# 两组色名：
+#  1) 语义槽位——powerline 各段直接引用，请勿删/改名：
+#       red→系统·用户名段  peach→目录段  yellow→Git段
+#       green→语言段        sapphire→Docker段  lavender→时间段
+#       crust→亮色块上的文字色（深色变体=暗背景；Day=亮背景）
+#  2) 原生色 / 中性色——额外可选，给自定义段使用：
+#       orange blue cyan teal purple magenta pink
+#       comment fg fg_dark bg bg_dark surface
+# 换主题只改顶部的 palette = 'tokyonight_xxx'
+
+[palettes.tokyonight_night]
+# 语义槽位（被各段引用）
+red      = "#f7768e"
+peach    = "#ff9e64"
+yellow   = "#e0af68"
+green    = "#9ece6a"
+sapphire = "#7aa2f7"
+lavender = "#bb9af7"
+crust    = "#1a1b26"
+# 原生色
+orange   = "#ff9e64"
+blue     = "#7aa2f7"
+cyan     = "#7dcfff"
+teal     = "#1abc9c"
+purple   = "#9d7cd8"
+magenta  = "#bb9af7"
+pink     = "#ff007c"
+# 中性色
+comment  = "#565f89"
+fg       = "#c0caf5"
+fg_dark  = "#a9b1d6"
+bg       = "#1a1b26"
+bg_dark  = "#16161e"
+surface  = "#414868"
+
+[palettes.tokyonight_storm]
+# 语义槽位（被各段引用）
+red      = "#f7768e"
+peach    = "#ff9e64"
+yellow   = "#e0af68"
+green    = "#9ece6a"
+sapphire = "#7aa2f7"
+lavender = "#bb9af7"
+crust    = "#24283b"
+# 原生色
+orange   = "#ff9e64"
+blue     = "#7aa2f7"
+cyan     = "#7dcfff"
+teal     = "#1abc9c"
+purple   = "#9d7cd8"
+magenta  = "#bb9af7"
+pink     = "#ff007c"
+# 中性色
+comment  = "#565f89"
+fg       = "#c0caf5"
+fg_dark  = "#a9b1d6"
+bg       = "#24283b"
+bg_dark  = "#1f2335"
+surface  = "#414868"
+
+[palettes.tokyonight_moon]
+# 语义槽位（被各段引用）
+red      = "#ff757f"
+peach    = "#ff966c"
+yellow   = "#ffc777"
+green    = "#c3e88d"
+sapphire = "#82aaff"
+lavender = "#c099ff"
+crust    = "#222436"
+# 原生色
+orange   = "#ff966c"
+blue     = "#82aaff"
+cyan     = "#86e1fc"
+teal     = "#4fd6be"
+purple   = "#fca7ea"
+magenta  = "#c099ff"
+pink     = "#ff007c"
+# 中性色
+comment  = "#636da6"
+fg       = "#c8d3f5"
+fg_dark  = "#828bb8"
+bg       = "#222436"
+bg_dark  = "#1e2030"
+surface  = "#444a73"
+
+# Day 为浅色变体；crust 取浅背景色，使亮色块上的文字为浅色
+[palettes.tokyonight_day]
+# 语义槽位（被各段引用）
+red      = "#f52a65"
+peach    = "#b15c00"
+yellow   = "#8c6c3e"
+green    = "#587539"
+sapphire = "#2e7de9"
+lavender = "#9854f1"
+crust    = "#e1e2e7"
+# 原生色
+orange   = "#b15c00"
+blue     = "#2e7de9"
+cyan     = "#007197"
+teal     = "#118c74"
+purple   = "#7847bd"
+magenta  = "#9854f1"
+pink     = "#d20065"
+# 中性色
+comment  = "#848cb5"
+fg       = "#3760bf"
+fg_dark  = "#6172b0"
+bg       = "#e1e2e7"
+bg_dark  = "#d0d5e3"
+surface  = "#a8aecb"

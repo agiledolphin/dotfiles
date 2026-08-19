@@ -1,0 +1,60 @@
+# --- 基础主题设置 ---
+theme = "tokyonight_storm"
+
+[editor]
+line-number = "relative"      # 使用相对行号，方便进行多行跳转（如 10j, 5k）
+mouse = true                  # 启用鼠标支持
+cursorline = true             # 高亮当前行
+auto-format = true            # 保存时自动格式化
+idle-timeout = 200            # 提示弹窗出现的时间（毫秒），调低可以让反馈更灵敏
+completion-trigger-len = 2    # 输入 2 个字符后触发补全
+bufferline = "always"         # 总是显示顶部的标签栏（Buffer 列表）
+color-modes = true            # 针对不同模式显示不同颜色的状态栏背景
+
+[editor.cursor-shape]
+insert = "bar"                # 插入模式使用竖线光标
+normal = "block"              # 普通模式使用块状光标
+select = "underline"          # 选择模式使用下划线
+
+[editor.file-picker]
+hidden = false                # 在文件查找器中显示隐藏文件（如 .gitignore 等）
+
+[editor.statusline]
+left = ["mode", "spacer", "spinner", "file-name", "read-only-indicator", "file-modification-indicator", "version-control"]
+center = []
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+display-messages = true       # 在底部状态栏显示 LSP 信息
+display-inlay-hints = true    # 显示代码内联提示（如变量类型、参数名）
+
+[editor.indent-guides]
+render = true                 # 渲染缩进线
+character = "╎"               # 缩进线字符
+skip-levels = 1               # 跳过第一层缩进线
+
+[editor.soft-wrap]
+enable = true                 # 开启软换行，避免代码过长超出屏幕
+
+# --- 快捷键映射 (Keymaps) ---
+[keys.normal]
+# 快速保存与退出
+"esc" = ["collapse_selection", "keep_primary_selection"]
+"C-s" = ":w"
+"C-q" = ":q"
+
+# 缓存区（Buffer）切换
+"L" = ":buffer-next"
+"H" = ":buffer-previous"
+"C-w" = ":buffer-close"
+
+# 空间键增强
+"space" = { "." = "file_picker", "f" = "file_picker_in_current_directory" }
+
+[keys.insert]
+# 插入模式下的快捷键
+"C-v" = "paste_after"         # 方便在终端里粘贴
