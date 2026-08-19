@@ -2,15 +2,18 @@
 
 # ──────────────────────────────────────────────────────────────
 # Starship 配置 · Catppuccin Powerline 风格
+#   → "Catppuccin Powerline" 指布局预设（分段/箭头结构），与配色无关
+#   → 默认激活配色为 catppuccin_mocha；TokyoNight / Catppuccin 均可选，见下方 palette
 #   → 放到 ~/.config/starship.toml
 #   → 必须安装 Nerd Font，否则色块箭头与图标会变成方块
-#   → 换主题：把下面的 palette 改成 tokyonight_storm / tokyonight_moon / tokyonight_day
+#   → 换主题：TokyoNight 系列改成 tokyonight_storm / tokyonight_moon / tokyonight_day
+#            Catppuccin 系列改成 catppuccin_mocha / catppuccin_macchiato / catppuccin_frappe / catppuccin_latte
 # ──────────────────────────────────────────────────────────────
 
 # 将所有命令的超时时间扩大到 2000 毫秒（2秒）
 command_timeout = 2000
 
-palette = 'tokyonight_night'
+palette = 'catppuccin_mocha'
 
 # 提示符整体布局：powerline 色块单行，箭头处的 fg/bg 必须与相邻段对齐
 format = """
@@ -316,3 +319,106 @@ fg_dark  = "#6172b0"
 bg       = "#e1e2e7"
 bg_dark  = "#d0d5e3"
 surface  = "#a8aecb"
+
+# ── Catppuccin 调色板（官方色号，四套）──
+
+[palettes.catppuccin_mocha]
+# 语义槽位（被各段引用）
+red      = "#f38ba8"
+peach    = "#fab387"
+yellow   = "#f9e2af"
+green    = "#a6e3a1"
+sapphire = "#74c7ec"
+lavender = "#b4befe"
+crust    = "#11111b"
+# 原生色
+orange   = "#fab387"
+blue     = "#89b4fa"
+cyan     = "#89dceb"
+teal     = "#94e2d5"
+purple   = "#cba6f7"
+magenta  = "#f5c2e7"
+pink     = "#f5c2e7"
+# 中性色
+comment  = "#7f849c"
+fg       = "#cdd6f4"
+fg_dark  = "#a6adc8"
+bg       = "#1e1e2e"
+bg_dark  = "#181825"
+surface  = "#313244"
+
+[palettes.catppuccin_macchiato]
+# 语义槽位（被各段引用）
+red      = "#ed8796"
+peach    = "#f5a97f"
+yellow   = "#eed49f"
+green    = "#a6da95"
+sapphire = "#7dc4e4"
+lavender = "#b7bdf8"
+crust    = "#181926"
+# 原生色
+orange   = "#f5a97f"
+blue     = "#8aadf4"
+cyan     = "#91d7e3"
+teal     = "#8bd5ca"
+purple   = "#c6a0f6"
+magenta  = "#f5bde6"
+pink     = "#f5bde6"
+# 中性色
+comment  = "#8087a2"
+fg       = "#cad3f5"
+fg_dark  = "#a5adcb"
+bg       = "#24273a"
+bg_dark  = "#1e2030"
+surface  = "#363a4f"
+
+[palettes.catppuccin_frappe]
+# 语义槽位（被各段引用）
+red      = "#e78284"
+peach    = "#ef9f76"
+yellow   = "#e5c890"
+green    = "#a6d189"
+sapphire = "#85c1dc"
+lavender = "#babbf1"
+crust    = "#232634"
+# 原生色
+orange   = "#ef9f76"
+blue     = "#8caaee"
+cyan     = "#99d1db"
+teal     = "#81c8be"
+purple   = "#ca9ee6"
+magenta  = "#f4b8e4"
+pink     = "#f4b8e4"
+# 中性色
+comment  = "#838ba7"
+fg       = "#c6d0f5"
+fg_dark  = "#a5adce"
+bg       = "#303446"
+bg_dark  = "#292c3c"
+surface  = "#414559"
+
+# Latte 为浅色变体；crust 取浅背景色，使亮色块上的文字为浅色
+[palettes.catppuccin_latte]
+# 语义槽位（被各段引用）
+red      = "#d20f39"
+peach    = "#fe640b"
+yellow   = "#df8e1d"
+green    = "#40a02b"
+sapphire = "#209fb5"
+lavender = "#7287fd"
+crust    = "#dce0e8"
+# 原生色
+orange   = "#fe640b"
+blue     = "#1e66f5"
+cyan     = "#04a5e5"
+teal     = "#179299"
+purple   = "#8839ef"
+magenta  = "#ea76cb"
+pink     = "#ea76cb"
+# 中性色
+comment  = "#8c8fa1"
+fg       = "#4c4f69"
+fg_dark  = "#6c6f85"
+bg       = "#eff1f5"
+bg_dark  = "#e6e9ef"
+surface  = "#acb0be"
