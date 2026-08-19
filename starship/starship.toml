@@ -52,22 +52,23 @@ disabled = false
 style = "bg:red fg:crust"
 
 [os.symbols]
-Windows = ""
+Windows = ""
 Ubuntu = "󰕈"
-SUSE = ""
+SUSE = ""
 Raspbian = "󰐿"
 Mint = "󰣭"
 Macos = "󰀵"
-Manjaro = ""
+Manjaro = ""
 Linux = "󰌽"
 Gentoo = "󰣨"
 Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
+Alpine = ""
+Amazon = ""
+Android = ""
+AOSC = ""
 Arch = "󰣇"
 Artix = "󰣇"
-CentOS = ""
+CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
@@ -187,11 +188,10 @@ format = '[[  $time ](fg:crust bg:lavender)]($style)'
 # ── 命令耗时（提示符尾部，超过 2 秒才显示）──
 [cmd_duration]
 disabled = false
-min_time = 2000
-show_milliseconds = false
+show_milliseconds = true
 show_notifications = false
 style = "fg:lavender"
-format = '[  $duration]($style)'
+format = '[  $duration]($style)'
 
 # 单行提示符（catppuccin-powerline 默认风格）。
 # 想改成「信息一行 + 输入一行」的两行提示符，把下面改成 disabled = false
@@ -346,6 +346,23 @@ fg_dark  = "#a6adc8"
 bg       = "#1e1e2e"
 bg_dark  = "#181825"
 surface  = "#313244"
+# 官方 24 色全名（补全，供自定义段直接引用官方色名）
+rosewater = "#f5e0dc"
+flamingo  = "#f2cdcd"
+mauve     = "#cba6f7"
+maroon    = "#eba0ac"
+sky       = "#89dceb"
+text      = "#cdd6f4"
+subtext1  = "#bac2de"
+subtext0  = "#a6adc8"
+overlay2  = "#9399b2"
+overlay1  = "#7f849c"
+overlay0  = "#6c7086"
+surface2  = "#585b70"
+surface1  = "#45475a"
+surface0  = "#313244"
+base      = "#1e1e2e"
+mantle    = "#181825"
 
 [palettes.catppuccin_macchiato]
 # 语义槽位（被各段引用）
@@ -371,6 +388,23 @@ fg_dark  = "#a5adcb"
 bg       = "#24273a"
 bg_dark  = "#1e2030"
 surface  = "#363a4f"
+# 官方 24 色全名（补全，供自定义段直接引用官方色名）
+rosewater = "#f4dbd6"
+flamingo  = "#f0c6c6"
+mauve     = "#c6a0f6"
+maroon    = "#ee99a0"
+sky       = "#91d7e3"
+text      = "#cad3f5"
+subtext1  = "#b8c0e0"
+subtext0  = "#a5adcb"
+overlay2  = "#939ab7"
+overlay1  = "#8087a2"
+overlay0  = "#6e738d"
+surface2  = "#5b6078"
+surface1  = "#494d64"
+surface0  = "#363a4f"
+base      = "#24273a"
+mantle    = "#1e2030"
 
 [palettes.catppuccin_frappe]
 # 语义槽位（被各段引用）
@@ -396,6 +430,23 @@ fg_dark  = "#a5adce"
 bg       = "#303446"
 bg_dark  = "#292c3c"
 surface  = "#414559"
+# 官方 24 色全名（补全，供自定义段直接引用官方色名）
+rosewater = "#f2d5cf"
+flamingo  = "#eebebe"
+mauve     = "#ca9ee6"
+maroon    = "#ea999c"
+sky       = "#99d1db"
+text      = "#c6d0f5"
+subtext1  = "#b5bfe2"
+subtext0  = "#a5adce"
+overlay2  = "#949cbb"
+overlay1  = "#838ba7"
+overlay0  = "#737994"
+surface2  = "#626880"
+surface1  = "#51576d"
+surface0  = "#414559"
+base      = "#303446"
+mantle    = "#292c3c"
 
 # Latte 为浅色变体；crust 取浅背景色，使亮色块上的文字为浅色
 [palettes.catppuccin_latte]
@@ -422,3 +473,20 @@ fg_dark  = "#6c6f85"
 bg       = "#eff1f5"
 bg_dark  = "#e6e9ef"
 surface  = "#acb0be"
+# 官方 24 色全名（补全，供自定义段直接引用官方色名）
+rosewater = "#dc8a78"
+flamingo  = "#dd7878"
+mauve     = "#8839ef"
+maroon    = "#e64553"
+sky       = "#04a5e5"
+text      = "#4c4f69"
+subtext1  = "#5c5f77"
+subtext0  = "#6c6f85"
+overlay2  = "#7c7f93"
+overlay1  = "#8c8fa1"
+overlay0  = "#9ca0b0"
+surface2  = "#acb0be"
+surface1  = "#bcc0cc"
+surface0  = "#ccd0da"
+base      = "#eff1f5"
+mantle    = "#e6e9ef"
