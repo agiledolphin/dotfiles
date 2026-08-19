@@ -1,5 +1,5 @@
 # --- 基础主题设置 ---
-theme = "tokyonight_storm"
+theme = "catppuccin_mocha"
 
 [editor]
 line-number = "relative"      # 使用相对行号，方便进行多行跳转（如 10j, 5k）
@@ -50,10 +50,10 @@ enable = true                 # 开启软换行，避免代码过长超出屏幕
 # 缓存区（Buffer）切换
 "L" = ":buffer-next"
 "H" = ":buffer-previous"
-"C-w" = ":buffer-close"
+"C-t" = ":buffer-close"       # 原用 C-w，会覆盖 Helix 默认的窗口模式前缀键，改用未占用的 C-t
 
-# 空间键增强
-"space" = { "." = "file_picker", "f" = "file_picker_in_current_directory" }
+# 空间键增强：新增当前目录选择器，不覆盖默认的 space f（工作区根目录选择器）
+"space" = { "F" = "file_picker_in_current_directory" }
 
 [keys.insert]
 # 插入模式下的快捷键
