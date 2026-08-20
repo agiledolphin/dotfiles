@@ -188,7 +188,7 @@ format = '[[  $time ](fg:crust bg:lavender)]($style)'
 # ── 命令耗时（提示符尾部，超过 2 秒才显示）──
 [cmd_duration]
 disabled = false
-show_milliseconds = true
+show_milliseconds = false
 show_notifications = false
 style = "bg:lavender fg:crust"
 format = '[[  $duration ](fg:crust bg:lavender)]($style)'
