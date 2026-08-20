@@ -190,8 +190,8 @@ format = '[[  $time ](fg:crust bg:lavender)]($style)'
 disabled = false
 show_milliseconds = true
 show_notifications = false
-style = "fg:lavender"
-format = '[  $duration]($style)'
+style = "bg:lavender fg:crust"
+format = '[[  $duration ](fg:crust bg:lavender)]($style)'
 
 # 单行提示符（catppuccin-powerline 默认风格）。
 # 想改成「信息一行 + 输入一行」的两行提示符，把下面改成 disabled = false
