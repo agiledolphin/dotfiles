@@ -1,0 +1,64 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "padding": { "top": 5 }
+  },
+  "display": {
+    "separator": "  ",
+    "key": { "width": 13 },
+    // Catppuccin Mocha: green / yellow / red
+    "percent": {
+      "color": {
+        "green": "38;2;166;227;161",
+        "yellow": "38;2;249;226;175",
+        "red": "38;2;243;139;168"
+      }
+    }
+  },
+  // 配色为 Catppuccin Mocha（24-bit）：
+  //   blue 89b4fa · mauve cba6f7 · teal 94e2d5 · peach fab387
+  //   lavender b4befe · overlay0 6c7086
+  // 图标使用 JSON \u 转义（Nerd Font 私有区字符），避免编辑/复制时丢失
+  "modules": [
+    "break",
+    { "type": "custom", "format": "{#38;2;108;112;134}──{#1;38;2;137;180;250} Hardware {#38;2;108;112;134}──" },
+    { "type": "host",    "keyColor": "38;2;137;180;250", "key": " Host" },
+    { "type": "cpu",     "keyColor": "38;2;137;180;250", "key": " CPU" },
+    { "type": "gpu",     "keyColor": "38;2;137;180;250", "key": " GPU" },
+    { "type": "memory",  "keyColor": "38;2;137;180;250", "key": "󰍛 Memory" },
+    { "type": "swap",    "keyColor": "38;2;137;180;250", "key": " Swap" },
+    {
+      "type": "disk",
+      "keyColor": "38;2;137;180;250",
+      "key": " Disk",
+      "format": "{size-used} / {size-total} ({size-percentage}) - {filesystem}"
+    },
+    { "type": "display", "keyColor": "38;2;137;180;250", "key": " Display" },
+    { "type": "battery", "keyColor": "38;2;137;180;250", "key": " Battery" },
+
+    "break",
+    { "type": "custom", "format": "{#38;2;108;112;134}──{#1;38;2;203;166;247} Software {#38;2;108;112;134}──" },
+    { "type": "os",       "keyColor": "38;2;203;166;247", "key": " OS" },
+    { "type": "kernel",   "keyColor": "38;2;203;166;247", "key": " Kernel" },
+    { "type": "packages", "keyColor": "38;2;203;166;247", "key": " Packages" },
+    { "type": "shell",    "keyColor": "38;2;203;166;247", "key": " Shell" },
+    { "type": "terminal", "keyColor": "38;2;203;166;247", "key": " Terminal" },
+    { "type": "wm",       "keyColor": "38;2;203;166;247", "key": " WM" },
+
+    "break",
+    { "type": "custom", "format": "{#38;2;108;112;134}──{#1;38;2;148;226;213} Network {#38;2;108;112;134}──" },
+    { "type": "command", "keyColor": "38;2;148;226;213", "key": "\uf02b Hostname", "text": "scutil --get ComputerName" },
+    { "type": "localip", "keyColor": "38;2;148;226;213", "key": " Local IP" },
+    { "type": "wifi",    "keyColor": "38;2;148;226;213", "key": " Wi-Fi" },
+    { "type": "dns",     "keyColor": "38;2;148;226;213", "key": " DNS" },
+
+    "break",
+    { "type": "custom", "format": "{#38;2;108;112;134}──{#1;38;2;250;179;135} Status {#38;2;108;112;134}──" },
+    { "type": "uptime",   "keyColor": "38;2;250;179;135", "key": " Uptime" },
+    { "type": "datetime", "keyColor": "38;2;250;179;135", "key": " Date" },
+    { "type": "version",  "keyColor": "38;2;250;179;135", "key": " Version" },
+
+    "break",
+    "colors"
+  ]
+}
