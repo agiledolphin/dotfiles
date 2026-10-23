@@ -47,7 +47,7 @@
 
     "break",
     { "type": "custom", "format": "{#38;2;108;112;134}──{#1;38;2;148;226;213} Network {#38;2;108;112;134}──" },
-    { "type": "command", "keyColor": "38;2;148;226;213", "key": "\uf02b Hostname", "text": "scutil --get ComputerName" },
+    { "type": "command", "keyColor": "38;2;148;226;213", "key": "\uf02b Hostname", "text": "scutil --get ComputerName 2>/dev/null || hostname -s" },
     { "type": "localip", "keyColor": "38;2;148;226;213", "key": " Local IP" },
     { "type": "wifi",    "keyColor": "38;2;148;226;213", "key": " Wi-Fi" },
     { "type": "dns",     "keyColor": "38;2;148;226;213", "key": " DNS" },
