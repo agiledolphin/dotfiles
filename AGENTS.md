@@ -6,6 +6,10 @@
 
 每个软件一个子目录，目录名为软件名，内含该软件原生的配置文件名（如 `starship/starship.toml`、`helix/config.toml`）。新增软件配置时请遵循此约定。
 
+## 安装
+
+运行 `./install.sh` 将各配置软链接到实际路径（可重复执行，已存在的普通文件会备份为 `*.bak`）。新增软件配置时，同步在脚本的 `links` 数组中追加一行。
+
 ## 开发约定
 
 - 涉及 Python 程序时，原则上使用 [uv](https://github.com/astral-sh/uv) 工具，不使用 pip、venv、poetry、conda 等：
