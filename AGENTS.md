@@ -24,4 +24,4 @@
 
 - `starship/starship.toml` — Starship 提示符配置
 - `helix/config.toml` — Helix 编辑器配置
-- `fastfetch/config.jsonc` — Fastfetch 系统信息配置（Hardware / Software / Network / Status 分栏）
+- `fastfetch/config.jsonc` — Fastfetch 系统信息配置（Hardware / Software / Network / Status 分栏；已在 macOS 与 Omarchy 上测试通过）
