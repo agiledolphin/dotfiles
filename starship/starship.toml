@@ -3,11 +3,12 @@
 # ──────────────────────────────────────────────────────────────
 # Starship 配置 · Catppuccin Powerline 风格
 #   → "Catppuccin Powerline" 指布局预设（分段/箭头结构），与配色无关
-#   → 默认激活配色为 catppuccin_mocha；TokyoNight / Catppuccin 均可选，见下方 palette
+#   → 默认激活配色为 catppuccin_mocha；TokyoNight / Catppuccin / Merino 均可选，见下方 palette
 #   → 放到 ~/.config/starship.toml
 #   → 必须安装 Nerd Font，否则色块箭头与图标会变成方块
 #   → 换主题：TokyoNight 系列改成 tokyonight_storm / tokyonight_moon / tokyonight_day
 #            Catppuccin 系列改成 catppuccin_mocha / catppuccin_macchiato / catppuccin_frappe / catppuccin_latte
+#            Merino 系列改成 merino_dark / merino_light
 # ──────────────────────────────────────────────────────────────
 
 # 将所有命令的超时时间扩大到 2000 毫秒（2秒）
@@ -490,3 +491,57 @@ surface1  = "#bcc0cc"
 surface0  = "#ccd0da"
 base      = "#eff1f5"
 mantle    = "#e6e9ef"
+
+# ── Merino 调色板（取自终端主题 Merino Dark / Merino Light 的 ANSI 色）──
+# peach 在 ANSI 中无对应色，取 GitHub 风格橙色补充，用于与相邻 yellow 段区分
+
+[palettes.merino_dark]
+# 语义槽位（被各段引用）
+red      = "#ff7b72"
+peach    = "#f0883e"
+yellow   = "#e3b341"
+green    = "#56d364"
+sapphire = "#39c5cf"
+lavender = "#bc8cff"
+crust    = "#0d1117"
+# 原生色
+orange   = "#f0883e"
+blue     = "#58a6ff"
+cyan     = "#56d4dd"
+teal     = "#39c5cf"
+purple   = "#bc8cff"
+magenta  = "#d2a8ff"
+pink     = "#ffa198"
+# 中性色
+comment  = "#6e7681"
+fg       = "#e6edf3"
+fg_dark  = "#b1bac4"
+bg       = "#0d1117"
+bg_dark  = "#010409"
+surface  = "#484f58"
+
+# Light 为浅色变体；crust 取白色背景，使彩色块上的文字为白色
+[palettes.merino_light]
+# 语义槽位（被各段引用）
+red      = "#cf222e"
+peach    = "#bc4c00"
+yellow   = "#c47a00"
+green    = "#116329"
+sapphire = "#1b7c83"
+lavender = "#8250df"
+crust    = "#ffffff"
+# 原生色
+orange   = "#bc4c00"
+blue     = "#0969da"
+cyan     = "#3192aa"
+teal     = "#1b7c83"
+purple   = "#8250df"
+magenta  = "#a475f9"
+pink     = "#a40e26"
+# 中性色
+comment  = "#6e7781"
+fg       = "#1f2328"
+fg_dark  = "#57606a"
+bg       = "#ffffff"
+bg_dark  = "#f6f8fa"
+surface  = "#8c959f"
