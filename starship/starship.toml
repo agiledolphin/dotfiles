@@ -14,7 +14,7 @@
 # 将所有命令的超时时间扩大到 2000 毫秒（2秒）
 command_timeout = 2000
 
-palette = 'catppuccin_mocha'
+palette = 'merino_dark'
 
 # 提示符整体布局：powerline 色块单行，箭头处的 fg/bg 必须与相邻段对齐
 format = """
