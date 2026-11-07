@@ -29,4 +29,4 @@
 - `starship/starship.toml` — Starship 提示符配置（已在 macOS 与 Omarchy 上测试通过）
 - `helix/config.toml` — Helix 编辑器配置（已在 macOS 与 Omarchy 上测试通过）
 - `fastfetch/config.jsonc` — Fastfetch 系统信息配置（Hardware / Software / Network / Status 分栏；已在 macOS 与 Omarchy 上测试通过）
-- `ghostty/config` — Ghostty 终端配置；不由 `install.sh` 安装，`git pull` 后按各机器环境手动调整
+- `ghostty/config` — Ghostty 终端配置；不由 `install.sh` 安装，`git pull` 后按各机器环境手动调整（如 `background-blur = macos-glass-regular` 仅限 macOS 26+，更早的系统改用 `true`）
