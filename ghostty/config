@@ -1,0 +1,70 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║              Ghostty 终端配置文件                            ║
+# ║  格式：key = value，# 开头为注释，留空行分隔各区块           ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+# ── 字体 ────────────────────────────────────────────────────────
+# 主字体族名称，可设置多次以添加回退字体。留空使用系统默认。
+font-family = JetBrainsMono Nerd Font
+
+# 字体大小（磅），支持小数，macOS 默认 13
+font-size = 14
+
+# ── 主题 ────────────────────────────────────────────────────────
+# 配色主题，支持跟随系统自动切换明暗：light:浅色主题,dark:深色主题
+# 配色主题名称、文件路径，或 "light:主题名,dark:主题名" 以跟随系统深浅模式。
+theme = light:Catppuccin Latte,dark:Catppuccin Macchiato
+
+# ── 外观 ────────────────────────────────────────────────────────
+# 背景透明度：0.0 全透明，1.0 不透明；搭配 background-blur 效果更佳
+background-opacity = 0.9
+
+# 背景模糊强度。可选：false、true（=20）、非负整数，或 macos-glass-regular / macos-glass-clear（仅 macOS）。
+background-blur = macos-glass-regular
+
+# 内容区内边距（像素）：使文字离窗口边缘保持一定距离，视觉更舒适
+window-padding-x = 12
+window-padding-y = 12
+
+# macOS Dock 图标样式：ghost（默认幽灵）/ glass（玻璃）/ custom
+macos-icon = glass
+
+# 光标形状：block（方块）、bar（竖线）、underline（下划线）、block_hollow（空心方块）。
+cursor-style = block
+
+# ── 窗口 ────────────────────────────────────────────────────────
+# 初始窗口大小，单位为字符列数 / 行数
+window-width = 150
+window-height = 45
+
+# 新窗口是否继承当前工作目录：true 打开时跳转到上一个终端所在目录
+window-inherit-working-directory = false
+
+# 窗口状态记忆：default 由系统决定，never 不记忆，always 始终恢复
+window-save-state = default
+
+# ── 终端行为 ─────────────────────────────────────────────────────
+# 选中文字后自动复制到剪贴板，无需手动 Cmd+C
+copy-on-select = true
+
+# 关闭终端时若有运行中的进程则弹出确认：true（智能判断）、false（不确认）、always（始终确认）。
+confirm-close-surface = true
+
+# ── Shell 集成 ───────────────────────────────────────────────────
+# 启用 Shell 集成功能模块（逗号分隔）：
+#   no-cursor   — 不让 Shell 集成控制光标样式
+#   sudo        — sudo 时保持 Shell 集成
+#   title       — 自动设置窗口标题为当前命令 / 目录
+#   ssh-env     — SSH 时传递必要的环境变量
+#   ssh-terminfo — SSH 时自动上传 Ghostty 的 terminfo，解决远程键盘乱码
+shell-integration-features = no-cursor,sudo,title,ssh-env,ssh-terminfo
+
+# ── macOS ───────────────────────────────────────────────────
+# 标题栏样式（仅 macOS，仅影响新窗口）：transparent（透明）、native、tabs、hidden（隐藏）。
+macos-titlebar-style = transparent
+
+# ── 本机覆盖 ─────────────────────────────────────────────────────
+# 机器相关或不宜公开的设置（如内网 SSH 快捷键）放在 ~/.config/ghostty/config.local，
+# 不纳入版本控制；"?" 表示文件不存在时不报错。
+# 用绝对路径而非相对路径：本文件经软链接加载时，相对路径会按仓库目录解析。
+config-file = ?~/.config/ghostty/config.local

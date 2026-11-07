@@ -11,6 +11,7 @@ links=(
   "starship/starship.toml:$config/starship.toml"
   "helix/config.toml:$config/helix/config.toml"
   "fastfetch/config.jsonc:$config/fastfetch/config.jsonc"
+  "ghostty/config:$config/ghostty/config"
 )
 
 for entry in "${links[@]}"; do
