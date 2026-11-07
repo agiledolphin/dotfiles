@@ -25,4 +25,4 @@
 - `starship/starship.toml` — Starship 提示符配置（已在 macOS 与 Omarchy 上测试通过）
 - `helix/config.toml` — Helix 编辑器配置（已在 macOS 与 Omarchy 上测试通过）
 - `fastfetch/config.jsonc` — Fastfetch 系统信息配置（Hardware / Software / Network / Status 分栏；已在 macOS 与 Omarchy 上测试通过）
-- `ghostty/config` — Ghostty 终端配置；机器相关或不宜公开的设置（如内网 SSH 快捷键）放在不入库的 `~/.config/ghostty/config.local`
+- `ghostty/config` — Ghostty 终端配置；不由 `install.sh` 安装，`git pull` 后按各机器环境手动调整；机器相关或不宜公开的设置（如内网 SSH 快捷键）放在不入库的 `~/.config/ghostty/config.local`
