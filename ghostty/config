@@ -62,9 +62,3 @@ shell-integration-features = no-cursor,sudo,title,ssh-env,ssh-terminfo
 # ── macOS ───────────────────────────────────────────────────
 # 标题栏样式（仅 macOS，仅影响新窗口）：transparent（透明）、native、tabs、hidden（隐藏）。
 macos-titlebar-style = transparent
-
-# ── 本机覆盖 ─────────────────────────────────────────────────────
-# 机器相关或不宜公开的设置（如内网 SSH 快捷键）放在 ~/.config/ghostty/config.local，
-# 不纳入版本控制；"?" 表示文件不存在时不报错。
-# 用绝对路径而非相对路径：本文件经软链接加载时，相对路径会按仓库目录解析。
-config-file = ?~/.config/ghostty/config.local

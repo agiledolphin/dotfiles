@@ -6,6 +6,10 @@
 
 每个软件一个子目录，目录名为软件名，内含该软件原生的配置文件名（如 `starship/starship.toml`、`helix/config.toml`）。新增软件配置时请遵循此约定。
 
+## 隐私约定
+
+配置文件会纳入版本控制并推送到远程，所有软件的配置都不得包含敏感或可识别个人环境的信息：密钥、token、密码，以及内网 IP、用户名、服务器名/别名等。此类内容放在仓库之外（如 `~/.ssh/config`、shell 的本机配置），提交前自查。
+
 ## 安装
 
 运行 `./install.sh` 将各配置软链接到实际路径（可重复执行，已存在的普通文件会备份为 `*.bak`）。新增软件配置时，同步在脚本的 `links` 数组中追加一行。已在 macOS 与 Omarchy 上测试通过。
@@ -25,4 +29,4 @@
 - `starship/starship.toml` — Starship 提示符配置（已在 macOS 与 Omarchy 上测试通过）
 - `helix/config.toml` — Helix 编辑器配置（已在 macOS 与 Omarchy 上测试通过）
 - `fastfetch/config.jsonc` — Fastfetch 系统信息配置（Hardware / Software / Network / Status 分栏；已在 macOS 与 Omarchy 上测试通过）
-- `ghostty/config` — Ghostty 终端配置；不由 `install.sh` 安装，`git pull` 后按各机器环境手动调整；机器相关或不宜公开的设置（如内网 SSH 快捷键）放在不入库的 `~/.config/ghostty/config.local`
+- `ghostty/config` — Ghostty 终端配置；不由 `install.sh` 安装，`git pull` 后按各机器环境手动调整

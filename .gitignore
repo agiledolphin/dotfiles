@@ -13,9 +13,6 @@ Thumbs.db
 .venv/
 __pycache__/
 
-# Machine-local overrides
-config.local
-
 # Backups / secrets
 *.bak
 .env
